@@ -1,114 +1,129 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+OrionLib:MakeNotification({
+	Name = "Logged in!",
+	Content = "You are logged in as "..Player.Name.."",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+_G.Key = "rjobhrob7tbiht5bt"
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 local Window = OrionLib:MakeWindow({Name = "Lux Ware Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Lux Ware Hub"})
 
 local Tab = Window:MakeTab({
-	Name = "Free Scripts",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+    Name = "Free Scripts",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
 })
 
 local Tab2 = Window:MakeTab({
-	Name = "Universal",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+    Name = "Universal",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
 })
 
 local Tab3 = Window:MakeTab({
-	Name = "Player",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+    Name = "Player",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
 })
 
 Tab:AddButton({
-	Name = "Mystic Falls",
-	Callback = function()
-      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/tnewman-afk/scripthub/main/312.lua'),true))()
-  	end    
+    Name = "Mystic Falls",
+    Callback = function()
+              loadstring(game:HttpGet(('https://raw.githubusercontent.com/tnewman-afk/scripthub/main/312.lua'),true))()
+      end
 })
 
 Tab:AddButton({
-	Name = "Doors",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
-  	end    
+    Name = "Doors",
+    Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
+      end
 })
 
 Tab:AddButton({
-	Name = "Slap Battles",
-	Callback = function()
-      		loadstring(game:HttpGet(("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Battles")))()
-  	end    
+    Name = "Slap Battles",
+    Callback = function()
+              loadstring(game:HttpGet(("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Battles")))()
+      end
 })
 
 Tab2:AddButton({
-	Name = "Dex V3",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
-  	end    
+    Name = "Dex V3",
+    Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+      end
 })
 
 Tab2:AddButton({
-	Name = "Infinite Yield",
-	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-  	end    
+    Name = "Infinite Yield",
+    Callback = function()
+              loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+      end
 })
 
 Tab3:AddSlider({
-	Name = "WalkSpeed",
-	Min = 20,
-	Max = 1000,
-	Default = 5,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "WalkSpeed",
-	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-		Walkspeed = Value
-	end    
+    Name = "WalkSpeed",
+    Min = 20,
+    Max = 1000,
+    Default = 5,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "WalkSpeed",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+        Walkspeed = Value
+    end
 })
 
 Tab3:AddToggle({
-	Name = "Keep Walkspeed",
-	Default = false,
-	Callback = function(Value)
-		KeepWalkspeed = Value
-		while KeepWalkspeed do
-			if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= Walkspeed then
-				game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Walkspeed
-			end
-			task.wait()
-		end
-	end    
+    Name = "Keep Walkspeed",
+    Default = false,
+    Callback = function(Value)
+        KeepWalkspeed = Value
+        while KeepWalkspeed do
+            if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= Walkspeed then
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Walkspeed
+            end
+            task.wait()
+        end
+    end
 })
 
 Tab3:AddSlider({
-	Name = "JumpPower",
-	Min = 50,
-	Max = 1000,
-	Default = 50,
-	Color = Color3.fromRGB(255, 255, 255),
-	Increment = 1,
-	ValueName = "JumpPower",
-	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-		Jumppower = Value
-	end    
+    Name = "JumpPower",
+    Min = 50,
+    Max = 1000,
+    Default = 50,
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 1,
+    ValueName = "JumpPower",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+        Jumppower = Value
+    end
 })
 
 Tab3:AddToggle({
-	Name = "Keep JumpPower",
-	Default = false,
-	Callback = function(Value)
-		KeepJumppower = Value
-		while KeepJumppower do
-			if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= Jumppower then
-				game.Players.LocalPlayer.Character.Humanoid.JumpPower = Jumppower
-			end
-			task.wait()
-		end
-	end    
+    Name = "Keep JumpPower",
+    Default = false,
+    Callback = function(Value)
+        KeepJumppower = Value
+        while KeepJumppower do
+            if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= Jumppower then
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = Jumppower
+            end
+            task.wait()
+        end
+    end
 })
 
 local function randomString(length)
@@ -121,4 +136,50 @@ local function randomString(length)
         table.insert(chars, string.char(ascii))
     end
     return table.concat(chars)
+    end
 end
+
+function CorrectKeyNotification()
+    OrionLib:MakeNotification({
+	Name = "Correct Key!",
+	Content = "You have entered the correct key!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
+
+function WrongKeyNotification()
+    OrionLib:MakeNotification({
+	Name = "Wrong Key!",
+	Content = "You have entered the wrong key!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
+
+local Tab = Window:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		 _G.KeyInput = Value
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+      		if _G.KeyInput == _G.Key then
+            MakeScriptHub()
+            CorrectKeyNotification()
+            else
+                WrongKeyNotification()
+            end
+  	end    
+})
